@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "661530983894",
+    "firebase_url": "https://hands-up-f011c.firebaseio.com",
+    "project_id": "hands-up-f011c",
+    "storage_bucket": "hands-up-f011c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:661530983894:android:828440e7b881e65f",
+        "android_client_info": {
+          "package_name": "edu.illinois.handsup"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "661530983894-igbbq1mtplbcgjeal82ihspsembqqedp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.illinois.handsup",
+            "certificate_hash": "6c4739eee9f31e02e866bbf9d8f3ebbdd4a2c6a5"
+          }
+        },
+        {
+          "client_id": "661530983894-qfv1usj7bsgjkanb75aul4pe4u15i4jl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3kozyq4uM7XQ4fDCHEQnhBXanE7eFFSk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "661530983894-qfv1usj7bsgjkanb75aul4pe4u15i4jl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

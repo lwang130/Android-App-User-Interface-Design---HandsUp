@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:src="@drawable/handsup"
+        android:scaleType="centerCrop"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="top"
+        android:background="#dff0ffff">
+
+        <Toolbar
+            android:id="@+id/toolbar_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="4dp"
+            android:titleTextAppearance="@style/ToolbarTitleTextAppearance"
+            android:background="#006a4e"
+            android:title="@string/app_name" />
+
+        <LinearLayout
+            android:id="@+id/toolbar2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp"
+            android:layout_marginTop="20dp">
+
+            <Button
+                android:id="@+id/course"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="#60006a4e"
+                android:fontFamily="serif-monospace"
+                android:text="Course List"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+            <Button
+                android:id="@+id/group_of_student"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#60006a4e"
+                android:fontFamily="serif-monospace"
+                android:text="Check Group"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
+            <Button
+                android:id="@+id/history"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="#60006a4e"
+                android:fontFamily="serif-monospace"
+                android:text="History"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="60dp"
+            android:layout_weight="1">
+
+            <Button
+                android:id="@+id/wrong"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/pic"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="56dp"
+                android:background="#33FF0000"
+                android:drawableTop="@drawable/ic_close_black_48dp"
+                android:gravity="center"
+                android:paddingTop="20dp" />
+
+            <ImageView
+                android:id="@+id/pic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/chris" />
+
+            <Button
+                android:id="@+id/right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/wrong"
+                android:layout_alignBottom="@+id/wrong"
+                android:layout_alignParentEnd="true"
+                android:background="#3300FF00"
+                android:drawableTop="@drawable/ic_check_black_48dp"
+                android:gravity="center"
+                android:paddingTop="20dp" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chris Evans"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_alignLeft="@id/wrong"
+            android:layout_marginTop="30dp"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/next_student"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#d0006a4e"
+                android:fontFamily="serif-monospace"
+                android:text="Next Student"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <Button
+                    android:id="@+id/notify_student"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:background="#d0006a4e"
+                    android:fontFamily="serif-monospace"
+                    android:text="Notify"
+                    android:drawableLeft="@drawable/ic_action_email"
+                    android:drawableTint="@android:color/white"
+                    android:paddingRight="30dp"
+                    android:paddingLeft="20dp"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+
+                
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
+
+
+
+

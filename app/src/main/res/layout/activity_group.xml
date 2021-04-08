@@ -1,0 +1,1115 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:src="@drawable/handsup"
+        android:scaleType="centerCrop"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#dff0ffff"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/toolbar2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+
+            <Button
+                android:id="@+id/group_course"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="#60006a4e"
+                android:fontFamily="serif-monospace"
+                android:text="course list"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/select_from_group"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                android:background="#60006a4e"
+                android:fontFamily="serif-monospace"
+                android:text="Select Student"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:layout_gravity="center"/>
+
+            <Button
+                android:id="@+id/group_to_history"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="#60006a4e"
+                android:fontFamily="serif-monospace"
+                android:text="History"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+
+            <Button
+                android:id="@+id/notify_group"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="#d0006a4e"
+                android:drawableLeft="@drawable/ic_action_email"
+                android:drawableTint="@android:color/white"
+                android:fontFamily="serif-monospace"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="Notify Group"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/next_group"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#d0006a4e"
+                android:fontFamily="serif-monospace"
+                android:paddingLeft="40dp"
+                android:paddingRight="40dp"
+                android:text="Next Group"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:tint="@android:color/black"
+                android:hint="click to search..."
+                android:drawableLeft="@drawable/ic_action_search"
+                android:onClick="onStudentSerch"/>
+
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:nestedScrollingEnabled="true">
+
+            <LinearLayout
+                android:id="@+id/group_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.75"
+                        android:background="#00000000"
+                        />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:text="Aishwarya Rai"
+                        android:textStyle="bold"
+                        android:gravity="left|center"
+                        android:textColor="@android:color/black"
+                        android:textSize="25sp"/>
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:textStyle="bold"
+                        android:drawableLeft="@drawable/down_arrow"
+                        android:background="#60006a4e"
+                        android:onClick="decreaseScore"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:text="1"
+                        android:background="#30006a4e"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:drawableRight="@drawable/up_arrow"
+                        android:textStyle="bold"
+                        android:background="#60006a4e"
+                        android:onClick="increaseScore"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.75"
+                        android:background="#00000000"
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:text="Brad Pitt"
+                        android:textStyle="bold"
+                        android:gravity="left|center"
+                        android:textColor="@android:color/black"
+                        android:textSize="25sp"/>
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:textStyle="bold"
+                        android:drawableLeft="@drawable/down_arrow"
+                        android:background="#60006a4e"
+                        android:onClick="decreaseScore"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:text="1"
+                        android:background="#30006a4e"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:drawableRight="@drawable/up_arrow"
+                        android:textStyle="bold"
+                        android:background="#60006a4e"
+                        android:onClick="increaseScore"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.75"
+                        android:background="#00000000"
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:text="Charlize Theron"
+                        android:textStyle="bold"
+                        android:gravity="left|center"
+                        android:textColor="@android:color/black"
+                        android:textSize="25sp"/>
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:textStyle="bold"
+                        android:drawableLeft="@drawable/down_arrow"
+                        android:background="#60006a4e"
+                        android:onClick="decreaseScore"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:text="1"
+                        android:background="#30006a4e"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:drawableRight="@drawable/up_arrow"
+                        android:textStyle="bold"
+                        android:background="#60006a4e"
+                        android:onClick="increaseScore"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.75"
+                        android:background="#00000000"
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:text="Chris Evans"
+                        android:textStyle="bold"
+                        android:gravity="left|center"
+                        android:textColor="@android:color/black"
+                        android:textSize="25sp"/>
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:textStyle="bold"
+                        android:drawableLeft="@drawable/down_arrow"
+                        android:background="#60006a4e"
+                        android:onClick="decreaseScore"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:text="1"
+                        android:background="#30006a4e"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:drawableRight="@drawable/up_arrow"
+                        android:textStyle="bold"
+                        android:background="#60006a4e"
+                        android:onClick="increaseScore"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp"
+                    android:visibility="visible">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.75"
+                        android:background="#00000000"
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:text="Emma Watson"
+                        android:textStyle="bold"
+                        android:gravity="left|center"
+                        android:textColor="@android:color/black"
+                        android:textSize="25sp"/>
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:textStyle="bold"
+                        android:drawableLeft="@drawable/down_arrow"
+                        android:background="#60006a4e"
+                        android:onClick="decreaseScore"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:text="1"
+                        android:background="#30006a4e"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:drawableRight="@drawable/up_arrow"
+                        android:textStyle="bold"
+                        android:background="#60006a4e"
+                        android:onClick="increaseScore"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.75"
+                        android:background="#00000000"
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:text="Felicity Jones"
+                        android:textStyle="bold"
+                        android:gravity="left|center"
+                        android:textColor="@android:color/black"
+                        android:textSize="25sp"/>
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:textStyle="bold"
+                        android:drawableLeft="@drawable/down_arrow"
+                        android:background="#60006a4e"
+                        android:onClick="decreaseScore"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:text="1"
+                        android:background="#30006a4e"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:drawableRight="@drawable/up_arrow"
+                        android:textStyle="bold"
+                        android:background="#60006a4e"
+                        android:onClick="increaseScore"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.75"
+                        android:background="#00000000"
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:text="Gal Gadot"
+                        android:textStyle="bold"
+                        android:gravity="left|center"
+                        android:textColor="@android:color/black"
+                        android:textSize="25sp"/>
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:textStyle="bold"
+                        android:drawableLeft="@drawable/down_arrow"
+                        android:background="#60006a4e"
+                        android:onClick="decreaseScore"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:text="1"
+                        android:background="#30006a4e"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:drawableRight="@drawable/up_arrow"
+                        android:textStyle="bold"
+                        android:background="#60006a4e"
+                        android:onClick="increaseScore"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.75"
+                        android:background="#00000000"
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:text="George Clooney"
+                        android:textStyle="bold"
+                        android:gravity="left|center"
+                        android:textColor="@android:color/black"
+                        android:textSize="25sp"/>
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:textStyle="bold"
+                        android:drawableLeft="@drawable/down_arrow"
+                        android:background="#60006a4e"
+                        android:onClick="decreaseScore"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:text="1"
+                        android:background="#30006a4e"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:drawableRight="@drawable/up_arrow"
+                        android:textStyle="bold"
+                        android:background="#60006a4e"
+                        android:onClick="increaseScore"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.75"
+                        android:background="#00000000"
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:text="Johnny Depp"
+                        android:textStyle="bold"
+                        android:gravity="left|center"
+                        android:textColor="@android:color/black"
+                        android:textSize="25sp"/>
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:textStyle="bold"
+                        android:drawableLeft="@drawable/down_arrow"
+                        android:background="#60006a4e"
+                        android:onClick="decreaseScore" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:text="1"
+                        android:background="#30006a4e"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:drawableRight="@drawable/up_arrow"
+                        android:textStyle="bold"
+                        android:background="#60006a4e"
+                        android:onClick="increaseScore"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.75"
+                        android:background="#00000000"
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:text="Liam Neeson"
+                        android:textStyle="bold"
+                        android:gravity="left|center"
+                        android:textColor="@android:color/black"
+                        android:textSize="25sp"/>
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:textStyle="bold"
+                        android:drawableLeft="@drawable/down_arrow"
+                        android:background="#60006a4e"
+                        android:onClick="decreaseScore"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:text="1"
+                        android:background="#30006a4e"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:drawableRight="@drawable/up_arrow"
+                        android:textStyle="bold"
+                        android:background="#60006a4e"
+                        android:onClick="increaseScore"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.75"
+                        android:background="#00000000"
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:text="Margot Robbie"
+                        android:textStyle="bold"
+                        android:gravity="left|center"
+                        android:textColor="@android:color/black"
+                        android:textSize="25sp"/>
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:textStyle="bold"
+                        android:drawableLeft="@drawable/down_arrow"
+                        android:background="#60006a4e"
+                        android:onClick="decreaseScore"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:text="1"
+                        android:background="#30006a4e"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:drawableRight="@drawable/up_arrow"
+                        android:textStyle="bold"
+                        android:background="#60006a4e"
+                        android:onClick="increaseScore"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.75"
+                        android:background="#00000000"
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:text="Matt Damon"
+                        android:textStyle="bold"
+                        android:gravity="left|center"
+                        android:textColor="@android:color/black"
+                        android:textSize="25sp"/>
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:textStyle="bold"
+                        android:drawableLeft="@drawable/down_arrow"
+                        android:background="#60006a4e"
+                        android:onClick="decreaseScore"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:text="1"
+                        android:background="#30006a4e"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:drawableRight="@drawable/up_arrow"
+                        android:textStyle="bold"
+                        android:background="#60006a4e"
+                        android:onClick="increaseScore"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.75"
+                        android:background="#00000000"
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:text="Meryl Streep"
+                        android:textStyle="bold"
+                        android:gravity="left|center"
+                        android:textColor="@android:color/black"
+                        android:textSize="25sp"/>
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:textStyle="bold"
+                        android:drawableLeft="@drawable/down_arrow"
+                        android:background="#60006a4e"
+                        android:onClick="decreaseScore"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:text="1"
+                        android:background="#30006a4e"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:drawableRight="@drawable/up_arrow"
+                        android:textStyle="bold"
+                        android:background="#60006a4e"
+                        android:onClick="increaseScore"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.75"
+                        android:background="#00000000"
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:text="Priyanka Chopra"
+                        android:textStyle="bold"
+                        android:gravity="left|center"
+                        android:textColor="@android:color/black"
+                        android:textSize="25sp"/>
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:textStyle="bold"
+                        android:drawableLeft="@drawable/down_arrow"
+                        android:background="#60006a4e"
+                        android:onClick="decreaseScore"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:text="1"
+                        android:background="#30006a4e"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:drawableRight="@drawable/up_arrow"
+                        android:textStyle="bold"
+                        android:background="#60006a4e"
+                        android:onClick="increaseScore"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.75"
+                        android:background="#00000000"
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:text="Robert Downey Jr"
+                        android:textStyle="bold"
+                        android:gravity="left|center"
+                        android:textColor="@android:color/black"
+                        android:textSize="25sp"/>
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:textStyle="bold"
+                        android:drawableLeft="@drawable/down_arrow"
+                        android:background="#60006a4e"
+                        android:onClick="decreaseScore" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:text="1"
+                        android:background="#30006a4e"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:drawableRight="@drawable/up_arrow"
+                        android:textStyle="bold"
+                        android:background="#60006a4e"
+                        android:onClick="increaseScore"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.75"
+                        android:background="#00000000"
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:text="Ryan Gosling"
+                        android:textStyle="bold"
+                        android:gravity="left|center"
+                        android:textColor="@android:color/black"
+                        android:textSize="25sp"/>
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:textStyle="bold"
+                        android:drawableLeft="@drawable/down_arrow"
+                        android:background="#60006a4e"
+                        android:onClick="decreaseScore"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:text="1"
+                        android:background="#30006a4e"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:drawableRight="@drawable/up_arrow"
+                        android:textStyle="bold"
+                        android:background="#60006a4e"
+                        android:onClick="increaseScore"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.75"
+                        android:background="#00000000"
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:text="Scarlett Johannson"
+                        android:textStyle="bold"
+                        android:gravity="left|center"
+                        android:textColor="@android:color/black"
+                        android:textSize="25sp"/>
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:textStyle="bold"
+                        android:drawableLeft="@drawable/down_arrow"
+                        android:background="#60006a4e"
+                        android:onClick="decreaseScore"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:text="1"
+                        android:background="#30006a4e"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:drawableRight="@drawable/up_arrow"
+                        android:textStyle="bold"
+                        android:background="#60006a4e"
+                        android:onClick="increaseScore"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.75"
+                        android:background="#00000000"
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:text="Emma Stone"
+                        android:textStyle="bold"
+                        android:gravity="left|center"
+                        android:textColor="@android:color/black"
+                        android:textSize="25sp"/>
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:textStyle="bold"
+                        android:drawableLeft="@drawable/down_arrow"
+                        android:background="#60006a4e"
+                        android:onClick="decreaseScore"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:text="1"
+                        android:background="#30006a4e"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:drawableRight="@drawable/up_arrow"
+                        android:textStyle="bold"
+                        android:background="#60006a4e"
+                        android:onClick="increaseScore"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.75"
+                        android:background="#00000000"
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:text="Tom Cruise"
+                        android:textStyle="bold"
+                        android:gravity="left|center"
+                        android:textColor="@android:color/black"
+                        android:textSize="25sp"/>
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:textStyle="bold"
+                        android:drawableLeft="@drawable/down_arrow"
+                        android:background="#60006a4e"
+                        android:onClick="decreaseScore"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:text="1"
+                        android:background="#30006a4e"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:drawableRight="@drawable/up_arrow"
+                        android:textStyle="bold"
+                        android:background="#60006a4e"
+                        android:onClick="increaseScore"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.75"
+                        android:background="#00000000"
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3"
+                        android:text="Will Smith"
+                        android:textStyle="bold"
+                        android:gravity="left|center"
+                        android:textColor="@android:color/black"
+                        android:textSize="25sp"/>
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:textStyle="bold"
+                        android:drawableLeft="@drawable/down_arrow"
+                        android:background="#60006a4e"
+                        android:onClick="decreaseScore"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.8"
+                        android:text="1"
+                        android:background="#30006a4e"
+                        android:textStyle="bold"
+                        android:gravity="center" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:drawableRight="@drawable/up_arrow"
+                        android:textStyle="bold"
+                        android:background="#60006a4e"
+                        android:onClick="increaseScore"/>
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </LinearLayout>
+
+</FrameLayout>

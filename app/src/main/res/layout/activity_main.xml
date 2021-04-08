@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top"
+        android:src="@drawable/handsup"
+        android:scaleType="centerCrop"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#dff0ffff"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_above="@+id/horizontal_dropdown_icon_menu_items"
+            android:layout_toLeftOf="@+id/dropdown_custom_icon_menu"
+            android:layout_toStartOf="@+id/dropdown_custom_icon_menu"
+            android:fontFamily="serif-monospace"
+            android:gravity="left|center"
+            android:text="CS 465 Lecture"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:background="#60006a4e"
+            android:onClick="horizontalDropDownIconMenu"/>
+
+        <ImageButton
+            android:id="@+id/dropdown_custom_icon_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center"
+            android:background="#60006a4e"
+            android:onClick="horizontalDropDownIconMenu"
+            android:padding="16dp"
+            android:src="@drawable/ic_action_more_vert"
+            android:tint="@android:color/white" />
+
+        <LinearLayout
+            android:id="@+id/horizontal_dropdown_icon_menu_items"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dropdown_custom_icon_menu"
+            android:layout_marginTop="5dp"
+            android:background="#60006a4e"
+            android:orientation="vertical"
+            android:padding="3dp"
+            android:visibility="invisible">
+
+            <Button
+                android:id="@+id/select_student"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#60006a4e"
+                android:fontFamily="serif-monospace"
+                android:gravity="center"
+                android:onClick="menuItemClick"
+                android:paddingBottom="5dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="5dp"
+                android:text="randomly select"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"/>
+
+            <Button
+                android:id="@+id/create"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#60006a4e"
+                android:fontFamily="serif-monospace"
+                android:gravity="center"
+                android:onClick="menuItemClick"
+                android:paddingBottom="5dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="5dp"
+                android:text="group randomly"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"/>
+
+            <Button
+                android:id="@+id/history"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="5dp"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_marginTop="5dp"
+                android:background="#60006a4e"
+                android:fontFamily="serif-monospace"
+                android:gravity="center"
+                android:onClick="menuItemClick"
+                android:paddingBottom="5dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="5dp"
+                android:text="history"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="14dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@+id/textView"
+            android:layout_toRightOf="@+id/textView"
+            android:clickable="true"
+            android:tint="@android:color/white"
+            app:backgroundTint="#60006a4e"
+            app:fabSize="mini"
+            app:rippleColor="@android:color/background_dark"
+            app:srcCompat="@android:drawable/ic_input_add" />
+
+    </RelativeLayout>
+
+</FrameLayout>

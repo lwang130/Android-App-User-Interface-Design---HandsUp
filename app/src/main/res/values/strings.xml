@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CS465 Hands Up!</string>
+    <string name="title_activity_random_select">Random Select</string>
+    <string name="course_page">Course Page</string>
+    <string name="title_activity_history">History</string>
+    <string name="galgadot">Gal Gadot</string>
+</resources>
